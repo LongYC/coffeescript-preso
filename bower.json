@@ -1,0 +1,17 @@
+{
+  "name": "coffeescript-101-talk",
+  "version": "0.1.0-SNAPSHOT",
+  "homepage": "https://github.com/LongYC/coffeescript-101-talk",
+  "authors": [
+    "LongYC <contact@longyc.com>"
+  ],
+  "description": "A little talk on CoffeeScript.",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "impress.js": "~0.5.3"
+  }
+}
