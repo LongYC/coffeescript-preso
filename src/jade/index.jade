@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=1024')
+    title CoffeeSript 101
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic', rel='stylesheet')
+    link(href='../bower_components/impress.js/css/impress-demo.css', rel='stylesheet')
+  body.impress-not-supported
+    .fallback-message
+      p
+        | Your browser
+        b  doesn't support the features required
+        |  by impress.js, so you are presented with a simplified version of this presentation.
+      p
+        | For the best experience please use the latest
+        b Chrome
+        | ,
+        b  Safari
+        |  or
+        b  Firefox
+        |  browser.
+    #impress
+      #bored.step.slide(data-x='-1000', data-y='-1500')
+        h2 CoffeeSctipt 101
+      .step.slide(data-x='0', data-y='-1500')
+        p You are attending a talk given by a noob.
+      .step.slide(data-x='1000', data-y='-1500')
+        p Why would you want to do that?
+      #overview.step(data-x='3000', data-y='1500', data-scale='10')
+    script(src='../bower_components/impress.js/js/impress.js')
+    script.
+      impress().init();
