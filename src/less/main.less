@@ -15,7 +15,39 @@ body {
     background-color: #1976D2;
 }
 
-// Steps
+a {
+    text-decoration: none;
+}
+
+// Impress not supported.
+
+.fallback-message {
+    display: none;
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+    background: #EEDC94;
+
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+.impress-not-supported {
+    .fallback-message {
+        display: block;
+    }
+}
+
+.impress-not-supported .impress-disabled {
+    .step {
+        position: relative;
+        opacity: 1;
+        margin: 20px auto;
+    }
+}
+
+// Steps.
 
 .step {
     box-sizing: border-box !important;
@@ -34,7 +66,7 @@ body {
     }
 }
 
-// Slides
+// Slides.
 
 .slide {
     width: 900px;
@@ -72,33 +104,25 @@ body {
 
     .slide-body {
         padding: 40px;
+
+        p {
+            margin: 0 0 20px;
+        }
     }
 }
 
-// Impress not supported.
+// Cover.
 
-.fallback-message {
-    display: none;
-    width: 780px;
-    padding: 10px 10px 0;
-    margin: 20px auto;
-    background: #EEDC94;
+#cover {
+    .slide-body {
+        text-align: center;
 
-    p {
-        margin-bottom: 10px;
-    }
-}
+        h3, p {
+            margin-bottom: 40px;
+        }
 
-.impress-not-supported {
-    .fallback-message {
-        display: block;
-    }
-}
-
-.impress-not-supported .impress-disabled {
-    .step {
-        position: relative;
-        opacity: 1;
-        margin: 20px auto;
+        em {
+            font-size: 75%;
+        }
     }
 }
