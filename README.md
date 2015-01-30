@@ -1,5 +1,7 @@
 # CoffeeScript 101
 
+*v0.2.0-SNAPSHOT*
+
 A little talk on CoffeeScript.
 
 ## Build
