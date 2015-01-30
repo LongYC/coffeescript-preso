@@ -1,0 +1,14 @@
+div#hello-world
+  h2.heading "Hello, world!" Example
+  div.body
+    ol
+      li CoffeeScript source: 
+        code hello.coffee
+        pre
+          | alert 'Hello, world!'
+      li Compile:
+        pre coffee -c hello.coffee
+      li JavaScript output: 
+        code hello.js
+        pre
+          | alert('Hello, world!');
