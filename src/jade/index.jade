@@ -4,8 +4,9 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=1024')
     title CoffeeSript 101
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold', rel='stylesheet')
     link(href='css/main.css', rel='stylesheet')
+    link(href='css/prism.css', rel='stylesheet')
   body.impress-not-supported
     section.fallback-message
       include ./includes/fallback-message.jade
@@ -25,3 +26,4 @@ html
       section#overview.step(data-x='1000', data-y='800', data-scale='5')
     script(src='js/impress.js')
     script(src='js/main.js')
+    script(src='js/prism.js')

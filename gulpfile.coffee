@@ -2,6 +2,7 @@ gulp = require 'gulp'
 jade = require 'gulp-jade'
 coffee = require 'gulp-coffee'
 less = require 'gulp-less'
+minify = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
 # Compile.
@@ -14,6 +15,7 @@ gulp.task 'jade', ->
 gulp.task 'less', ->
   gulp.src 'src/less/*.less'
     .pipe less()
+    .pipe minify()
     .pipe gulp.dest 'dist/css'
 
 gulp.task 'coffee', ->
@@ -23,13 +25,23 @@ gulp.task 'coffee', ->
 
 gulp.task 'compile', ['jade', 'less', 'coffee']
 
-# Copy dependency.
+# Copy dependencies.
 
 gulp.task 'uglify', ->
-  gulp.src 'bower_components/impress.js/js/impress.js'
+  gulp.src [
+    'bower_components/impress.js/js/impress.js'
+    'vendor/prism/prism.js'
+  ]
     .pipe uglify()
     .pipe gulp.dest 'dist/js'
 
+gulp.task 'minify', ->
+  gulp.src 'vendor/prism/prism.css'
+    .pipe minify()
+    .pipe gulp.dest 'dist/css'
+
+gulp.task 'copy', ['uglify', 'minify']
+
 # Default.
 
-gulp.task 'default', ['compile', 'uglify']
+gulp.task 'default', ['compile', 'copy']

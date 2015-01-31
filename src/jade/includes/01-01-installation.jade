@@ -8,6 +8,8 @@ div#installation
       li Install 
         a(href='https://www.npmjs.com/package/coffee-script/' title='CoffeeScript on npm.') CoffeeScript
         | :
-        pre npm install -g coffee-script
+        pre
+          code.language-bash npm install --global coffee-script
       li To compile:
-        pre coffee -c /path/to/my-coffeescript-file.coffee
+        pre
+          code.language-bash coffee --compile /path/to/filename.coffee

@@ -19,13 +19,6 @@ a {
     text-decoration: none;
 }
 
-pre, code {
-    border: 1px #CCCCCC solid;
-    padding: 10px 15px;
-    font-size: 80%;
-    background-color: #F5F5F5;
-}
-
 // Impress not supported.
 
 .fallback-message {
@@ -122,6 +115,31 @@ pre, code {
 
         li {
             margin: 0 0 40px;
+        }
+
+        .filename {
+            font-family: monospace;
+            font-size: 75%;
+            padding: 5px 10px;
+            vertical-align: middle;
+            color: #666666;
+            background-color: #F5F5F5;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+        }
+
+        // Override Prism.
+
+        pre {
+            margin: 20px 0;
+            padding: 0.4em 0.8em;
+            line-height: 75%;
+            border-radius: 5px;
+
+            code {
+                font-family: monospace;
+                font-size: 75%;
+            }
         }
     }
 }

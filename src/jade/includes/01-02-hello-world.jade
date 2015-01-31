@@ -3,12 +3,13 @@ div#hello-world
   div.body
     ol
       li CoffeeScript source: 
-        code hello.coffee
+        span.filename hello.coffee
         pre
-          | alert 'Hello, world!'
+          code.language-coffeescript alert 'Hello, world!'
       li Compile:
-        pre coffee -c hello.coffee
-      li JavaScript output: 
-        code hello.js
         pre
-          | alert('Hello, world!');
+          code.language-bash coffee --compile hello.coffee
+      li JavaScript output: 
+        span.filename hello.js
+        pre
+          code.language-javascript alert('Hello, world!');
