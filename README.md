@@ -10,4 +10,8 @@ A little talk on CoffeeScript.
 2. Install [Node.js](http://nodejs.org/ "Node.js official website.").
 3. $ `npm install`.
 
-Open `dist/index.html` with a web browser.
+## How to use
+
+1. Open `dist/index.html` with a web browser.
+2. Use left and right arrow keys to navigate.
+3. Have a nice day.

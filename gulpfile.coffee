@@ -2,6 +2,7 @@ gulp = require 'gulp'
 jade = require 'gulp-jade'
 coffee = require 'gulp-coffee'
 less = require 'gulp-less'
+uglify = require 'gulp-uglify'
 
 # Compile.
 
@@ -22,6 +23,13 @@ gulp.task 'coffee', ->
 
 gulp.task 'compile', ['jade', 'less', 'coffee']
 
+# Copy dependency.
+
+gulp.task 'uglify', ->
+  gulp.src 'bower_components/impress.js/js/impress.js'
+    .pipe uglify()
+    .pipe gulp.dest 'dist/js'
+
 # Default.
 
-gulp.task 'default', ['compile']
+gulp.task 'default', ['compile', 'uglify']
