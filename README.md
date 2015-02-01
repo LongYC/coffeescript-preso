@@ -1,6 +1,6 @@
 # CoffeeScript 101
 
-`v0.2.0-SNAPSHOT`
+`v0.2.0`
 
 A little talk on CoffeeScript.
 
