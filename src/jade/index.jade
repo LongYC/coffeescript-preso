@@ -11,8 +11,10 @@ html
     section.fallback-message
       include ./includes/fallback-message.jade
     section#impress
-      section.step.slide(data-x='0', data-y='0')
+      section#cover.step.slide(data-x='0', data-y='0')
         include ./includes/00-00-cover.jade
+        span#date February 2015
+        span#version v0.2.0-SNAPSHOT
       section.step.slide(data-x='1000', data-y='0')
         include ./includes/00-01-prerequisite.jade
       section.step.slide(data-x='0', data-y='800')
