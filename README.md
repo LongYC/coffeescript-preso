@@ -1,6 +1,6 @@
-# CoffeeScript 101
+# CoffeeScript 101 [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-talk.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-talk)
 
-`0.3.0-SNAPSHOT`
+**Version :** `0.3.0-SNAPSHOT`
 
 A little talk on CoffeeScript.
 
@@ -13,5 +13,5 @@ A little talk on CoffeeScript.
 ## How to use
 
 1. Open `dist/index.html` with a web browser.
-2. Use left and right arrow keys to navigate.
+2. Use arrow keys to navigate.
 3. Have a nice day.
