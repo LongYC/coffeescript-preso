@@ -6,10 +6,11 @@ div#hello-world
         span.filename hello.coffee
         pre
           code.language-coffeescript alert 'Hello, world!'
-      li Compile:
-        pre
-          code.language-bash coffee --compile hello.coffee
       li JavaScript output: 
         span.filename hello.js
         pre
-          code.language-javascript alert('Hello, world!');
+          code.language-javascript
+            | (function() {
+            |   alert('Hello, world!');
+            | 
+            | }).call(this);

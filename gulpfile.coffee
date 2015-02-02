@@ -5,22 +5,23 @@ less = require 'gulp-less'
 minify = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
-# Compile.
+# Compile source.
 
 gulp.task 'jade', ->
-  gulp.src 'src/jade/*.jade'
+  gulp.src 'src/jade/index.jade'
     .pipe jade()
     .pipe gulp.dest 'dist'
 
 gulp.task 'less', ->
-  gulp.src 'src/less/*.less'
+  gulp.src 'src/less/main.less'
     .pipe less()
     .pipe minify()
     .pipe gulp.dest 'dist/css'
 
 gulp.task 'coffee', ->
-  gulp.src 'src/coffee/*.coffee'
+  gulp.src 'src/coffee/main.coffee'
     .pipe coffee()
+    .pipe uglify()
     .pipe gulp.dest 'dist/js'
 
 gulp.task 'compile', ['jade', 'less', 'coffee']
@@ -42,6 +43,19 @@ gulp.task 'minify', ->
 
 gulp.task 'copy', ['uglify', 'minify']
 
+# Prepare examples.
+
+gulp.task 'source', ->
+  gulp.src 'src/coffee/example/*.coffee'
+    .pipe gulp.dest 'dist/example'
+
+gulp.task 'output', ->
+  gulp.src 'src/coffee/example/*.coffee'
+    .pipe coffee()
+    .pipe gulp.dest 'dist/example'
+
+gulp.task 'example', ['source', 'output']
+
 # Default.
 
-gulp.task 'default', ['compile', 'copy']
+gulp.task 'default', ['compile', 'copy', 'example']
