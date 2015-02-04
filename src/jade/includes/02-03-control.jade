@@ -1,0 +1,16 @@
+div#control
+  h2.heading Control Flow
+  div.body
+    ol
+      li Syntax:
+        pre
+          code.language-coffeescript
+            | grade = 'perfect' if score is 100
+      li Compiled:
+        pre
+          code.language-javascript
+            | var grade;
+            | 
+            | if (score === 100) {
+            |   grade = 'perfect';
+            | }

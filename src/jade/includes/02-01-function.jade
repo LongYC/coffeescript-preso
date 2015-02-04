@@ -1,0 +1,16 @@
+div#function
+  h2.heading Function
+  div.body
+    ol
+      li Syntax:
+        pre
+          code.language-coffeescript
+            | add = (x, y) -> x + y
+      li Compiled:
+        pre
+          code.language-javascript
+            | var add;
+            | 
+            | add = function(x, y) {
+            |   return x + y;
+            | };
