@@ -31,17 +31,21 @@ gulp.task 'compile', ['jade', 'less', 'coffee']
 gulp.task 'uglify', ->
   gulp.src [
     'bower_components/impress.js/js/impress.js'
-    'vendor/prism/prism.js'
+    'assets/vendor/prism/prism.js'
   ]
     .pipe uglify()
     .pipe gulp.dest 'dist/js'
 
 gulp.task 'minify', ->
-  gulp.src 'vendor/prism/prism.css'
+  gulp.src 'assets/vendor/prism/prism.css'
     .pipe minify()
     .pipe gulp.dest 'dist/css'
 
-gulp.task 'copy', ['uglify', 'minify']
+gulp.task 'favicon', ->
+  gulp.src 'assets/favicon.ico'
+    .pipe gulp.dest 'dist'
+
+gulp.task 'copy', ['uglify', 'minify', 'favicon']
 
 # Prepare examples.
 
