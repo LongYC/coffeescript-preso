@@ -1,4 +1,1 @@
-(function() {
-  impress().init();
-
-}).call(this);
+(function(){impress().init()}).call(this);

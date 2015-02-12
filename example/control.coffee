@@ -1,0 +1,1 @@
+grade = 'perfect' if score is 100
