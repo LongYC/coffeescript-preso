@@ -1,6 +1,6 @@
 # CoffeeScript 101 [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-talk.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-talk)
 
-**Version :** `0.3.0`
+**Version :** `0.4.0-SNAPSHOT`
 
 A little talk on CoffeeScript.
 
