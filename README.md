@@ -1,8 +1,8 @@
-# CoffeeScript 101 [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-talk.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-talk)
+# CoffeeScript 101 Presentation [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-presentation.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-presentation)
 
 **Version :** `0.4.0-SNAPSHOT`
 
-A little talk on CoffeeScript.
+HTML based presentation slides on CoffeeScript basics.
 
 ## How to build
 
