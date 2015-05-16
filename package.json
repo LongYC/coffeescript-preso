@@ -1,16 +1,16 @@
 {
-  "name": "coffeescript-101-talk",
+  "name": "coffeescript-preso",
   "version": "0.4.0-SNAPSHOT",
   "description": "A little talk on CoffeeScript.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LongYC/coffeescript-101-talk.git"
+    "url": "https://github.com/LongYC/coffeescript-preso.git"
   },
   "author": "LongYC",
   "bugs": {
-    "url": "https://github.com/LongYC/coffeescript-101-talk/issues"
+    "url": "https://github.com/LongYC/coffeescript-preso/issues"
   },
-  "homepage": "https://github.com/LongYC/coffeescript-101-talk",
+  "homepage": "https://github.com/LongYC/coffeescript-preso",
   "devDependencies": {
     "bower": "^1.3.12",
     "coffee-script": "^1.9.0",

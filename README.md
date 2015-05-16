@@ -1,4 +1,4 @@
-# CoffeeScript 101 Presentation [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-presentation.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-presentation)
+# CoffeeScript Preso [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-presentation.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-presentation)
 
 **Version :** `0.4.0-SNAPSHOT`
 
@@ -15,3 +15,9 @@ HTML based presentation slides on CoffeeScript basics.
 1. Open `dist/index.html` with a web browser.
 2. Use arrow keys to navigate.
 3. Have a nice day.
+
+## Trivia
+
+1. The original name of this project was [CoffeeScript 101 Talk](https://github.com/LongYC/coffeescript-101-talk "CoffeeScript 101 Talk").
+2. Then renamed to [CoffeeScript 101 Presentation](https://github.com/LongYC/coffeescript-101-presentation "CoffeeScript 101 Presentation").
+3. Now it is [CoffeeScript Preso](https://github.com/LongYC/coffeescript-preso "CoffeeScript Preso").
