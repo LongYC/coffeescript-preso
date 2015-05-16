@@ -6,7 +6,7 @@ class ClassA
   # "@" means "this."
   constructor: (instanceVariable) ->
     @instanceVariable = instanceVariable
-    @method @instanceVariable 
+    @method @instanceVariable
 
   # Proto
   method: (parameter) ->
