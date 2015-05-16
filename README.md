@@ -1,4 +1,4 @@
-# CoffeeScript Preso [![Build Status](https://travis-ci.org/LongYC/coffeescript-101-presentation.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-101-presentation)
+# CoffeeScript Preso [![Build Status](https://travis-ci.org/LongYC/coffeescript-preso.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-preso)
 
 **Version :** `0.4.0-SNAPSHOT`
 
