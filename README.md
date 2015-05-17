@@ -1,6 +1,6 @@
 # CoffeeScript Preso [![Build Status](https://travis-ci.org/LongYC/coffeescript-preso.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-preso)
 
-**Version :** `0.4.0-SNAPSHOT`
+**Version :** `0.4.0-0`
 
 HTML based presentation slides on CoffeeScript basics.
 
