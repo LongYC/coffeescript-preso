@@ -5,26 +5,12 @@ less = require 'gulp-less'
 minify = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
-# Compile source.
+# Distribution directories.
 
-gulp.task 'jade', ->
-  gulp.src 'src/jade/index.jade'
-    .pipe jade()
-    .pipe gulp.dest 'dist'
-
-gulp.task 'less', ->
-  gulp.src 'src/less/main.less'
-    .pipe less()
-    .pipe minify()
-    .pipe gulp.dest 'dist/css'
-
-gulp.task 'coffee', ->
-  gulp.src 'src/coffee/main.coffee'
-    .pipe coffee()
-    .pipe uglify()
-    .pipe gulp.dest 'dist/js'
-
-gulp.task 'compile', ['jade', 'less', 'coffee']
+distDir = 'dist'
+distCssDir = "#{distDir}/css"
+distJsDir = "#{distDir}/js"
+distExampleDir = "#{distDir}/example"
 
 # Copy dependencies.
 
@@ -34,16 +20,16 @@ gulp.task 'uglify', ->
     'assets/vendor/prism/prism.js'
   ]
     .pipe uglify()
-    .pipe gulp.dest 'dist/js'
+    .pipe gulp.dest distJsDir
 
 gulp.task 'minify', ->
   gulp.src 'assets/vendor/prism/prism.css'
     .pipe minify()
-    .pipe gulp.dest 'dist/css'
+    .pipe gulp.dest distCssDir
 
 gulp.task 'favicon', ->
   gulp.src 'assets/favicon.ico'
-    .pipe gulp.dest 'dist'
+    .pipe gulp.dest distDir
 
 gulp.task 'copy', ['uglify', 'minify', 'favicon']
 
@@ -51,15 +37,36 @@ gulp.task 'copy', ['uglify', 'minify', 'favicon']
 
 gulp.task 'source', ->
   gulp.src 'src/coffee/example/*.coffee'
-    .pipe gulp.dest 'dist/example'
+    .pipe gulp.dest distExampleDir
 
 gulp.task 'output', ->
   gulp.src 'src/coffee/example/*.coffee'
     .pipe coffee()
-    .pipe gulp.dest 'dist/example'
+    .pipe gulp.dest distExampleDir
 
 gulp.task 'example', ['source', 'output']
 
+# Compile source.
+
+gulp.task 'jade', ->
+  gulp.src 'src/jade/index.jade'
+    .pipe jade()
+    .pipe gulp.dest distDir
+
+gulp.task 'less', ->
+  gulp.src 'src/less/main.less'
+    .pipe less()
+    .pipe minify()
+    .pipe gulp.dest distCssDir
+
+gulp.task 'coffee', ->
+  gulp.src 'src/coffee/main.coffee'
+    .pipe coffee()
+    .pipe uglify()
+    .pipe gulp.dest distJsDir
+
+gulp.task 'compile', ['jade', 'less', 'coffee']
+
 # Default.
 
-gulp.task 'default', ['compile', 'copy', 'example']
+gulp.task 'default', ['copy', 'example', 'compile']
