@@ -1,3 +1,5 @@
+packagejson = require './package.json'
+
 gulp = require 'gulp'
 jade = require 'gulp-jade'
 coffee = require 'gulp-coffee'
@@ -50,7 +52,9 @@ gulp.task 'example', ['source', 'output']
 
 gulp.task 'jade', ->
   gulp.src 'src/jade/index.jade'
-    .pipe jade()
+    .pipe jade
+      locals:
+        version: packagejson.version
     .pipe gulp.dest distDir
 
 gulp.task 'less', ->
