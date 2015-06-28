@@ -7,8 +7,9 @@ less = require 'gulp-less'
 minify = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
-# Distribution directories.
+# Directories.
 
+srcDir = 'src/main'
 distDir = 'dist'
 distCssDir = "#{distDir}/css"
 distJsDir = "#{distDir}/js"
@@ -38,11 +39,11 @@ gulp.task 'copy', ['uglify', 'minify', 'favicon']
 # Prepare examples.
 
 gulp.task 'source', ->
-  gulp.src 'src/coffee/example/*.coffee'
+  gulp.src "#{srcDir}/coffee/example/*.coffee"
     .pipe gulp.dest distExampleDir
 
 gulp.task 'output', ->
-  gulp.src 'src/coffee/example/*.coffee'
+  gulp.src "#{srcDir}/coffee/example/*.coffee"
     .pipe coffee()
     .pipe gulp.dest distExampleDir
 
@@ -51,20 +52,20 @@ gulp.task 'example', ['source', 'output']
 # Compile source.
 
 gulp.task 'jade', ->
-  gulp.src 'src/jade/index.jade'
+  gulp.src "#{srcDir}/jade/index.jade"
     .pipe jade
       locals:
         version: packagejson.version
     .pipe gulp.dest distDir
 
 gulp.task 'less', ->
-  gulp.src 'src/less/main.less'
+  gulp.src "#{srcDir}/less/main.less"
     .pipe less()
     .pipe minify()
     .pipe gulp.dest distCssDir
 
 gulp.task 'coffee', ->
-  gulp.src 'src/coffee/main.coffee'
+  gulp.src "#{srcDir}/coffee/main.coffee"
     .pipe coffee()
     .pipe uglify()
     .pipe gulp.dest distJsDir
