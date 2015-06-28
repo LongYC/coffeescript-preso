@@ -10,6 +10,7 @@ uglify = require 'gulp-uglify'
 # Directories.
 
 srcDir = 'src/main'
+resourcesDir = 'src/resources'
 distDir = 'dist'
 distCssDir = "#{distDir}/css"
 distJsDir = "#{distDir}/js"
@@ -20,18 +21,18 @@ distExampleDir = "#{distDir}/example"
 gulp.task 'uglify', ->
   gulp.src [
     'bower_components/impress.js/js/impress.js'
-    'assets/vendor/prism/prism.js'
+    "#{resourcesDir}/vendor/prism/prism.js"
   ]
     .pipe uglify()
     .pipe gulp.dest distJsDir
 
 gulp.task 'minify', ->
-  gulp.src 'assets/vendor/prism/prism.css'
+  gulp.src "#{resourcesDir}/vendor/prism/prism.css"
     .pipe minify()
     .pipe gulp.dest distCssDir
 
 gulp.task 'favicon', ->
-  gulp.src 'assets/favicon.ico'
+  gulp.src "#{resourcesDir}/favicon.ico"
     .pipe gulp.dest distDir
 
 gulp.task 'copy', ['uglify', 'minify', 'favicon']
