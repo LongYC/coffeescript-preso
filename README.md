@@ -7,7 +7,7 @@ HTML based presentation slides on CoffeeScript basics.
 ## How to build
 
 1. Keep calm.
-2. Install [Node.js](http://nodejs.org/ "Node.js official website.").
+2. Install [Node.js](https://nodejs.org/ "Node.js official website.") *(version 0.10.x)*.
 3. $ `npm install`.
 
 ## How to use
