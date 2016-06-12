@@ -1,3 +1,5 @@
+packagejson = require './package.json'
+
 gulp = require 'gulp'
 jade = require 'gulp-jade'
 coffee = require 'gulp-coffee'
@@ -5,61 +7,72 @@ less = require 'gulp-less'
 minify = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
-# Compile source.
+# Directories.
 
-gulp.task 'jade', ->
-  gulp.src 'src/jade/index.jade'
-    .pipe jade()
-    .pipe gulp.dest 'dist'
-
-gulp.task 'less', ->
-  gulp.src 'src/less/main.less'
-    .pipe less()
-    .pipe minify()
-    .pipe gulp.dest 'dist/css'
-
-gulp.task 'coffee', ->
-  gulp.src 'src/coffee/main.coffee'
-    .pipe coffee()
-    .pipe uglify()
-    .pipe gulp.dest 'dist/js'
-
-gulp.task 'compile', ['jade', 'less', 'coffee']
+srcDir = 'src/main'
+resourcesDir = 'src/resources'
+distDir = 'dist'
+distCssDir = "#{distDir}/css"
+distJsDir = "#{distDir}/js"
+distExampleDir = "#{distDir}/example"
 
 # Copy dependencies.
 
 gulp.task 'uglify', ->
   gulp.src [
     'bower_components/impress.js/js/impress.js'
-    'assets/vendor/prism/prism.js'
+    "#{resourcesDir}/vendor/prism/prism.js"
   ]
     .pipe uglify()
-    .pipe gulp.dest 'dist/js'
+    .pipe gulp.dest distJsDir
 
 gulp.task 'minify', ->
-  gulp.src 'assets/vendor/prism/prism.css'
+  gulp.src "#{resourcesDir}/vendor/prism/prism.css"
     .pipe minify()
-    .pipe gulp.dest 'dist/css'
+    .pipe gulp.dest distCssDir
 
 gulp.task 'favicon', ->
-  gulp.src 'assets/favicon.ico'
-    .pipe gulp.dest 'dist'
+  gulp.src "#{resourcesDir}/favicon.ico"
+    .pipe gulp.dest distDir
 
 gulp.task 'copy', ['uglify', 'minify', 'favicon']
 
 # Prepare examples.
 
 gulp.task 'source', ->
-  gulp.src 'src/coffee/example/*.coffee'
-    .pipe gulp.dest 'dist/example'
+  gulp.src "#{srcDir}/coffee/example/*.coffee"
+    .pipe gulp.dest distExampleDir
 
 gulp.task 'output', ->
-  gulp.src 'src/coffee/example/*.coffee'
+  gulp.src "#{srcDir}/coffee/example/*.coffee"
     .pipe coffee()
-    .pipe gulp.dest 'dist/example'
+    .pipe gulp.dest distExampleDir
 
 gulp.task 'example', ['source', 'output']
 
+# Compile source.
+
+gulp.task 'jade', ->
+  gulp.src "#{srcDir}/jade/index.jade"
+    .pipe jade
+      locals:
+        version: packagejson.version
+    .pipe gulp.dest distDir
+
+gulp.task 'less', ->
+  gulp.src "#{srcDir}/less/main.less"
+    .pipe less()
+    .pipe minify()
+    .pipe gulp.dest distCssDir
+
+gulp.task 'coffee', ->
+  gulp.src "#{srcDir}/coffee/main.coffee"
+    .pipe coffee()
+    .pipe uglify()
+    .pipe gulp.dest distJsDir
+
+gulp.task 'compile', ['jade', 'less', 'coffee']
+
 # Default.
 
-gulp.task 'default', ['compile', 'copy', 'example']
+gulp.task 'default', ['copy', 'example', 'compile']
