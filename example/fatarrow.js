@@ -8,9 +8,9 @@
   ($('body')).append($carA, $carB);
 
   Car = (function() {
-    function Car(_at_$car, _at_engineCapacity) {
-      this.$car = _at_$car;
-      this.engineCapacity = _at_engineCapacity;
+    function Car($car, engineCapacity) {
+      this.$car = $car;
+      this.engineCapacity = engineCapacity;
       this.startTellingEngineCapacity();
     }
 

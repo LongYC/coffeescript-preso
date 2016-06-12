@@ -1,5 +1,5 @@
 (function() {
-  var array, index, item, process, _i, _len;
+  var array, i, index, item, len, process;
 
   array = ['itemA', 'itemB', 'itemC'];
 
@@ -7,7 +7,7 @@
     return console.log(number + " is " + item);
   };
 
-  for (index = _i = 0, _len = array.length; _i < _len; index = ++_i) {
+  for (index = i = 0, len = array.length; i < len; index = ++i) {
     item = array[index];
     process(item, index);
   }
