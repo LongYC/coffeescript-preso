@@ -1,3 +1,5 @@
+> CoffeeScript has had its day, let's push for the latest JavaScript standard with [Babel](https://babeljs.io/ "Babel · The compiler for writing next generation JavaScript").
+
 # CoffeeScript Preso [![Build Status](https://travis-ci.org/LongYC/coffeescript-preso.svg?branch=develop)](https://travis-ci.org/LongYC/coffeescript-preso)
 
 **Version :** `0.4.0-0`
